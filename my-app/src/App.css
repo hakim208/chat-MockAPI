@@ -44,9 +44,16 @@
     justify-content: space-between;
     z-index: 3;
     position: fixed;
+    background-color: rgb(221, 221, 252);
   }
   .inp{
     border-bottom: 0.5px solid gray;
     width: 100%;
     outline: none;
+  }
+  @media (max-width:1000px) {
+    .inpAdd{
+      left: 20px;
+      top: 610px;
+    }
   }
