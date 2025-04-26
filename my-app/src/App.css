@@ -1,0 +1,52 @@
+.item {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: aliceblue;
+    border: none;
+  }
+  
+  .delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 4px 8px;
+    cursor: pointer;
+    display: none; 
+    width: 30px;
+    border-radius: 50%;
+  }
+  
+  .item:hover .delete-btn{
+    display: block;
+  }
+  .div{
+    display: flex;
+  }
+  .item:hover{
+    padding-right: 40px;
+    background-color: rgb(164, 245, 164);
+  }
+  .inpAdd{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    top: 670px;
+    left: 100px;
+    padding: 20px 10px 10px 10px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 15px;
+    justify-content: space-between;
+    z-index: 3;
+    position: fixed;
+  }
+  .inp{
+    border-bottom: 0.5px solid gray;
+    width: 100%;
+    outline: none;
+  }
