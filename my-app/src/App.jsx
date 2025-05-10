@@ -17,8 +17,8 @@ const App = () => {
 
   async function get() {
     try {
-      const response = await axios.get(API)
-      setData(response.data)
+      const { data } = await axios.get(API)
+      setData(data)
     } catch (error) {
       console.error(error);
     }
@@ -47,9 +47,13 @@ const App = () => {
   }
 
   useEffect(() => {
-    get()
+    const interval = setInterval(() => {
+      console.log(1);
+      get()
+    }, 3000)
+    return () => clearInterval(interval)
   })
-
+  
   return (
     <div>
       {
