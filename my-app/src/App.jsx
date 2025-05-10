@@ -53,23 +53,25 @@ const App = () => {
     }, 3000)
     return () => clearInterval(interval)
   })
-  
+
   return (
     <div>
-      {
-        data.map((e) => {
-          return (
-            <div key={e.id} className='div'>
-              <div className="item">
-                <span>{e.name}</span>
-                <img src={deletImg} onClick={() => deleteUser(e.id)} className='delete-btn' alt="" />
+      <div className='chat'>
+        {
+          data.map((e) => {
+            return (
+              <div key={e.id} className='div'>
+                <div className="item">
+                  <span>{e.name}</span>
+                  <img src={deletImg} onClick={() => deleteUser(e.id)} className='delete-btn' alt="" />
+                </div>
               </div>
-            </div>
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
       <div className='inpAdd'>
-        <input type="text" className='inp' placeholder='name' value={Add} onChange={(e) => { setAdd(e.target.value) }} />
+        <input type="text" className='inp' placeholder='Сообщение' value={Add} onChange={(e) => { setAdd(e.target.value) }} />
         <button onClick={addUser}>save</button>
       </div>
     </div>

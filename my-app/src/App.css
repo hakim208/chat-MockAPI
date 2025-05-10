@@ -1,168 +1,68 @@
 .item {
-    position: relative;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    background-color: aliceblue;
-    border: none;
-  }
-  
-  .delete-btn {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    padding: 4px 8px;
-    cursor: pointer;
-    display: none; 
-    width: 30px;
-    border-radius: 50%;
-  }
-  
-  .item:hover .delete-btn{
-    display: block;
-  }
-  .div{
-    display: flex;
-  }
-  .item:hover{
-    padding-right: 40px;
-    background-color: rgb(164, 245, 164);
-  }
-  .inpAdd{
-    display: flex;
-    width: 90%;
-    margin: auto;
-    position: absolute;
-    top: 670px;
-    left: 100px;
-    padding: 20px 10px 10px 10px;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-radius: 15px;
-    justify-content: space-between;
-    z-index: 3;
-    position: fixed;
-    background-color: rgb(221, 221, 252);
-  }
-  .inp{
-    border-bottom: 0.5px solid gray;
-    width: 100%;
-    outline: none;
-  }
-  @media (max-width:1000px) {
-    .inpAdd{
-      left: 20px;
-      top: 610px;
-    }
-  }
-.messageBox {
-  width: fit-content;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2d2d2d;
-  padding: 0 15px;
-  border-radius: 10px;
-  border: 1px solid rgb(63, 63, 63);
-  margin: 100px 0px 0px 500px;
-}
-.messageBox:focus-within {
-  border: 1px solid rgb(110, 110, 110);
-}
-.fileUploadWrapper {
-  width: fit-content;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#file {
-  display: none;
-}
-.fileUploadWrapper label {
-  cursor: pointer;
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-}
-.fileUploadWrapper label svg {
-  height: 18px;
-}
-.fileUploadWrapper label svg path {
-  transition: all 0.3s;
-}
-.fileUploadWrapper label svg circle {
-  transition: all 0.3s;
-}
-.fileUploadWrapper label:hover svg path {
-  stroke: #fff;
-}
-.fileUploadWrapper label:hover svg circle {
-  stroke: #fff;
-  fill: #3c3c3c;
-}
-.fileUploadWrapper label:hover .tooltip {
-  display: block;
-  opacity: 1;
-}
-.tooltip {
-  position: absolute;
-  top: -40px;
-  display: none;
-  opacity: 0;
-  color: white;
-  font-size: 10px;
-  text-wrap: nowrap;
-  background-color: #000;
-  padding: 6px 10px;
-  border: 1px solid #3c3c3c;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
-  transition: all 0.3s;
-}
-#messageInput {
-  width: 200px;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: aliceblue;
   border: none;
-  padding-left: 10px;
-  color: white;
-}
-#messageInput:focus ~ #sendButton svg path,
-#messageInput:valid ~ #sendButton svg path {
-  fill: #3c3c3c;
-  stroke: white;
 }
 
-#sendButton {
-  width: fit-content;
-  height: 100%;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 4px 8px;
   cursor: pointer;
-  transition: all 0.3s;
+  display: none;
+  width: 30px;
+  border-radius: 50%;
 }
-#sendButton svg {
-  height: 18px;
-  transition: all 0.3s;
+
+.item:hover .delete-btn {
+  display: block;
 }
-#sendButton svg path {
-  transition: all 0.3s;
+
+.div {
+  display: flex;
 }
-#sendButton:hover svg path {
-  fill: #3c3c3c;
-  stroke: white;
+
+.item:hover {
+  padding-right: 40px;
+  background-color: rgb(164, 245, 164);
+}
+
+.inpAdd {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  position: absolute;
+  top: 670px;
+  left: 100px;
+  padding: 20px 10px 10px 10px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-radius: 15px;
+  justify-content: space-between;
+  z-index: 3;
+  position: fixed;
+  background-color: rgb(221, 221, 252);
+}
+
+.inp {
+  border-bottom: 0.5px solid gray;
+  width: 100%;
+  outline: none;
+}
+
+.chat {
+ padding-bottom: 80px; 
+}
+
+@media (max-width:1000px) {
+  .inpAdd {
+    left: 20px;
+    top: 610px;
+  }
 }
