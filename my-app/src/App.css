@@ -1,11 +1,14 @@
 .item {
   position: relative;
-  padding: 10px;
+  padding: 10px 20px 10px 10px ;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  border-radius: 20px;
-  background-color: aliceblue;
+  border-radius: 10px;
+  background-color: rgb(186, 220, 250);
   border: none;
+  color: rgb(43, 42, 42);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
 }
 
 .delete-btn {
@@ -32,37 +35,43 @@
   background-color: rgb(164, 245, 164);
 }
 
-.inpAdd {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  position: absolute;
-  top: 670px;
-  left: 100px;
-  padding: 20px 10px 10px 10px;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-radius: 15px;
-  justify-content: space-between;
-  z-index: 3;
-  position: fixed;
-  background-color: rgb(221, 221, 252);
-}
-
 .inp {
   border-bottom: 0.5px solid gray;
   width: 100%;
-  outline: none;
+  outline: none;  
 }
 
 .chat {
  padding-bottom: 80px; 
 }
 
+.inpAdd{
+  position: absolute;
+  top: 90%;
+  width: 40%;
+  left: 30%;
+  z-index: 3;
+  display: flex;
+  position: fixed;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 20px;
+}
+.save{
+  width: 30px;
+}
+.save-btn {
+  background: none;
+  border: none;
+}
+
+.save.loading {
+  width: 20px;
+  height: 20px;
+}
 @media (max-width:1000px) {
-  .inpAdd {
-    left: 20px;
-    top: 610px;
-  }
+   .inpAdd{
+    width: 60%;
+    left: 20%;
+   }
 }

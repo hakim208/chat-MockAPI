@@ -3,10 +3,6 @@ import axios from "axios"
 
 import deletImg from "./assets/images (1).jpeg"
 
-import Grid from '@mui/material/Grid';
-import DeleteIcon from '@mui/icons-material/Delete';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-
 import "./App.css"
 
 const App = () => {
@@ -14,6 +10,8 @@ const App = () => {
 
   const [data, setData] = useState([])
   const [Add, setAdd] = useState("")
+
+  const [isLoading, setIsLoading] = useState(false);
 
   async function get() {
     try {
@@ -24,18 +22,26 @@ const App = () => {
     }
   }
 
-  async function addUser() {
+  async function addUser(e) {
+    e.preventDefault();
+    if (!Add.trim()) return;
+
     let newObj = {
       name: Add
-    }
+    };
+
+    setIsLoading(true);
     try {
-      await axios.post(API, newObj)
-      setAdd("")
-      get()
+      await axios.post(API, newObj);
+      setAdd("");
+      get();
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   }
+
 
   async function deleteUser(id) {
     try {
@@ -50,7 +56,7 @@ const App = () => {
     const interval = setInterval(() => {
       console.log(1);
       get()
-    }, 3000)
+    }, 1500)
     return () => clearInterval(interval)
   })
 
@@ -70,10 +76,32 @@ const App = () => {
           })
         }
       </div>
-      <div className='inpAdd'>
-        <input type="text" className='inp' placeholder='Сообщение' value={Add} onChange={(e) => { setAdd(e.target.value) }} />
-        <button onClick={addUser}>save</button>
-      </div>
+      <form className='inpAdd' onSubmit={addUser}>
+        <input
+          type="text"
+          className='inp'
+          placeholder='Сообщение'
+          value={Add}
+          onChange={(e) => setAdd(e.target.value)}
+        />
+
+        <button type='submit' className='save-btn'>
+          {isLoading ? (
+            <img
+              className='save loading'
+              src="https://i.gifer.com/ZZ5H.gif" 
+              alt="Loading..."
+            />
+          ) : (
+            <img
+              className='save'
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXkHffqB1HAbPafPVaJdo1N8qCKEEC4MsbtN0lGVQldR8s-lmLoJcW6U9UwwgqEQzPS4&usqp=CAU"
+              alt="Submit"
+            />
+          )}
+        </button>
+      </form>
+
     </div>
   )
 }
